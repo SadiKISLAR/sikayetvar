@@ -1,0 +1,19 @@
+.loginPageBody{
+    background-image: linear-gradient(to right, #FEAF00, #F8D442);
+    border: 2px solid  white;
+}
+
+.loginCard{
+    width: 475px;
+    height: 550px;
+    background-color: #FFFFFF;
+    margin: 175px 480px 175px 480px;
+    border: none;
+    border-radius: 20px;
+    color: #FFFFFF;
+    box-shadow: 2px 5px;
+    
+    font-family: montserrat ;
+    color: black;
+    
+}
