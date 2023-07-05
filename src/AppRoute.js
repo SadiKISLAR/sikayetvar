@@ -7,8 +7,8 @@ import HomePage from './pages/Home'
 const AppRoute = () => {
     return (
         <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/login' element={<LoginPage />} />
+            <Route path='/' element={<LoginPage />} />
+            <Route path='/home' element={<HomePage />} />
         </Routes>
     )
 }

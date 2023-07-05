@@ -6,8 +6,10 @@ import students from "../assets/graduation-cap 1.png"
 import dolar from "../assets/usd-square 1.png"
 import report from "../assets/file-chart-line 1.png"
 import setting from "../assets/sliders-v-square 1.png"
+import logout from "../assets/logout.png"
 import Home from '../components/Home'
 import Students from '../components/Students'
+import { useNavigate } from 'react-router-dom'
 
 // import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons'
 
@@ -19,6 +21,11 @@ const HomePage = () => {
         setShowHComponent(true)
     }
 
+    const storedUser = sessionStorage.getItem("user");
+    const user = JSON.parse(storedUser);
+    const username = user.split("@")[0]
+    const navigate = useNavigate();
+
     const showStudentsComp = () => {
         setShowHComponent(false)
     }
@@ -29,6 +36,8 @@ const HomePage = () => {
             showHomeComp();
         } else if (button === "students") {
             showStudentsComp();
+        } else if (button === "logout") {
+            navigate("/")
         }
     };
 
@@ -43,7 +52,7 @@ const HomePage = () => {
                 <div style={{ width: "219px", height: "150px", margin: "auto" }}>
                     <img style={{ margin: "10px 40px 10px 40px", borderRadius: "100%" }} src={avatar} alt="" />
                 </div>
-                <h3 style={{ width: "85px", height: "21px", margin: "16px 92px 10px 93px", fontSize: "17px" }}>John Doe</h3>
+                <h3 style={{ width: "85px", height: "21px", margin: "16px 92px 10px 93px", fontSize: "17px" }}>{username}</h3>
                 <p style={{ width: "48px", height: "17px", fontSize: "14px", color: "#FEAF00", margin: "auto" }}>Admin</p>
                 <div style={{ width: "193px", height: "497px", margin: "80px 38px 31px 39px " }}>
                     <button
@@ -51,82 +60,102 @@ const HomePage = () => {
                         style={{
                             width: "193px",
                             height: "41px",
+                            marginBottom: "10px",
                             backgroundColor: activeButton === "home" ? "#FEAF00" : "#F2EAE1",
                             border: "none",
                             color: "black",
                             fontSize: "14px"
                         }}
                     >
-                        <div  >
-                            <img width={"19px"} height={"17px"} src={home} alt="" /> Home
-                        </div>
+
+                        <img style={{ marginRight: "20px" }} width={"19px"} height={"17px"} src={home} alt="" /> Home
+
                     </button>
                     <button
                         onClick={() => handleClick("course")}
                         style={{
                             width: "193px",
                             height: "41px",
+                            marginBottom: "10px",
                             backgroundColor: activeButton === "course" ? "#FEAF00" : "#F2EAE1",
                             border: "none",
                             color: "black",
                             fontSize: "14px"
                         }}
                     >
-                        <img width={"12px"} height={"15px"} src={course} alt="" /> Course
+                        <img style={{ marginRight: "19px" }} width={"12px"} height={"15px"} src={course} alt="" /> Course
                     </button>
                     <button
                         onClick={() => handleClick("students")}
                         style={{
                             width: "193px",
                             height: "41px",
+                            marginBottom: "10px",
                             backgroundColor: activeButton === "students" ? "#FEAF00" : "#F2EAE1",
                             border: "none",
                             color: "black",
                             fontSize: "14px"
                         }}
                     >
-                        <img width={"20px"} height={"16px"} src={students} alt="" /> Students
+                        <img style={{ marginRight: "10px" }} width={"20px"} height={"16px"} src={students} alt="" /> Students
                     </button>
                     <button
                         onClick={() => handleClick("payment")}
                         style={{
                             width: "193px",
                             height: "41px",
+                            marginBottom: "10px",
                             backgroundColor: activeButton === "payment" ? "#FEAF00" : "#F2EAE1",
                             border: "none",
                             color: "black",
                             fontSize: "14px"
                         }}
                     >
-                        <img width={"15px"} height={"17px"} src={dolar} alt="" /> Payment
+                        <img style={{ marginRight: "10px" }} width={"15px"} height={"17px"} src={dolar} alt="" /> Payment
                     </button>
                     <button
                         onClick={() => handleClick("report")}
                         style={{
                             width: "193px",
                             height: "41px",
+                            marginBottom: "10px",
                             backgroundColor: activeButton === "report" ? "#FEAF00" : "#F2EAE1",
                             border: "none",
                             color: "black",
                             fontSize: "14px"
                         }}
                     >
-                        <img src={report} alt="" /> Report
+                        <img style={{ marginRight: "20px" }} src={report} alt="" /> Report
                     </button>
                     <button
                         onClick={() => handleClick("settings")}
                         style={{
                             width: "193px",
                             height: "41px",
+                            marginBottom: "10px",
                             backgroundColor: activeButton === "settings" ? "#FEAF00" : "#F2EAE1",
                             border: "none",
                             color: "black",
                             fontSize: "14px"
                         }}
                     >
-                        <img src={setting} alt="" /> Settings
+                        <img style={{ marginRight: "10px" }} src={setting} alt="" /> Settings
                     </button>
+                    <button
+                        onClick={() => handleClick("logout")}
+                        style={{
+                            width: "193px",
+                            height: "41px",
+                            backgroundColor: activeButton === "logout" ? "#FEAF00" : "#F2EAE1",
+                            border: "none",
+                            color: "black",
+                            fontSize: "14px",
+                            marginTop: "40px"
 
+                        }}
+                    >
+                        Logout<img style={{ marginLeft: "20px" }} src={logout} alt="" />
+                    </button>
 
 
                 </div>

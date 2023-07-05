@@ -295,7 +295,7 @@ const Students = () => {
                 </div>
                 <div style={{ backgroundColor: "#F8F8F8", height: "840px" }}>
                     <div style={{ width: "1170px", height: "60px", display: "flex", justifyContent: "space-between" }}>
-                        <h3 style={{ width: "152px", height: "27px", fontSize: "22px" }}>Students List</h3>
+                        <h3 style={{ width: "152px", height: "27px", fontSize: "22px", marginLeft: "30px" }}>Students List</h3>
                         <div>
                             <input
                                 id="search"
@@ -347,10 +347,12 @@ const Students = () => {
                             ))}
                         </tbody>
                     </table>
-                    <div style={{ width: "371px", height: "24px", marginLeft: "769px", marginTop: "33px", display: "flex", fontSize: "14px" }}>
+                    <div style={{ width: "371px", height: "24px", marginLeft: "690px", marginTop: "33px", marginRight: "30px", display: "flex", justifyContent: "space-evenly", alignItems: "center", fontSize: "14px" }}>
                         <div style={{ display: "flex", width: "150px", height: "18px" }}>
                             <label htmlFor="rowsPerPage">Rows Per Page: </label>
-                            <select id="rowsPerPage" value={rowsPerPage} onChange={handleChangeRowsPerPage}>
+                            <select style={{
+                                marginLeft: "5px"
+                            }} id="rowsPerPage" value={rowsPerPage} onChange={handleChangeRowsPerPage}>
                                 <option value={5}>5</option>
                                 <option value={6}>6</option>
                                 <option value={7}>7</option>
